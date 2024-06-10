@@ -1,143 +1,143 @@
+# Veterinary Management System
 
-# Veteriner Yönetim Sistemi
+This project is developed as part of the capstone project for the Patika+ FullStack Web Developer Program. The project includes both backend and frontend components of a veterinary management system.
 
-Bu proje, Patika+ FullStack Web Developer Programı'nın son aşaması olan capstone proje kapsamında geliştirilmiştir. Proje, bir veteriner yönetim sisteminin backend ve frontend bileşenlerini içermektedir.
+### Live Demo
+You can experience this project live, which meets all requirements and has a user-friendly interface.
+Access the live version of the project at [Live Demo](https://veterinarymanagementapp.netlify.app).
+`Deployed with Render. It may open slowly on the first launch.`
 
-### Canlı Demo
-Tüm isterlerin karşılandığı ve kullanıcı dostu bir arayüze sahip olan bu projeyi canlı olarak deneyebilirsiniz.
-Projenin canlı versiyonuna [Live Demo](https://veterinarymanagementapp.netlify.app) ulaşabilirsiniz.
-`Render ile deploy edilmiştir. İlk açılışta yavaş açılabilir.`
+- All CRUD, Search, and filter operations can be performed.
+- Searches in Customer, Animal, Appointment, and Vaccine are done in the database, so you must write the `full names`.
+- In Doctor and Report searches, you can search by writing `part of the names`.
+- Appointments can only be made `on the hour`. For example, at 14:00, 15:00.
+- You cannot add duplicate records. You will receive a `Conflict` error.
 
-- Tüm Crud, Search ve filtreleme işlemleri yapılabilmektedir.
-- Müşteri, Hayvan, Randevu, Aşı da aramalar veritabanında yapıldığı için isimlerin `tamamını yazmanıza gerek vardır.`
-- Doktor, Rapor aramalarında ise isimlerin `bir kısmını yazarak` arama yapabilirsiniz.
-- Randevular sadece `saat başı alınmaktadır`. Örneğin 14:00, 15:00 gibi saatlerde randevu alabilirsiniz.
-- Aynı kayıtları tekrar ekleyemezsiniz. `Conflict` hatası alırsınız.
-## Proje Açıklaması
+## Project Description
 
-Bu proje, veteriner hekimlerin, müşterilerin ve onların hayvanlarının yönetimini sağlar. Aynı zamanda randevu ve raporlama özelliklerini de içerir. Proje, aşağıdaki özellikleri içermektedir:
+This project provides management for veterinarians, customers, and their animals. It also includes appointment and reporting features. The project includes the following features:
 
-### Backend Geliştirme
+### Backend Development
 
-- **Veteriner doktorların kaydedilmesi**
-- **Doktorların çalışma günlerinin (müsait günlerin) kaydedilmesi**
-- **Müşterilerin kaydedilmesi**
-- **Müşterilere ait hayvanların kaydedilmesi**
-- **Hayvanlar için veteriner hekimlere randevu oluşturulması**
-- **Randevu oluştururken tarih ve saat girilmesi**
-- **Hayvanlara uygulanmış aşıların tarihleriyle birlikte kaydedilmesi**
-- **Rapor düzenleme ve raporlara aşı kaydı yapabilme**
+- **Recording veterinarians**
+- **Recording doctors' working days (available days)**
+- **Recording customers**
+- **Recording animals belonging to customers**
+- **Creating appointments for animals with veterinarians**
+- **Entering date and time while creating appointments**
+- **Recording vaccinations applied to animals along with dates**
+- **Creating reports and adding vaccinations to reports**
 
-### Frontend Geliştirme
+### Frontend Development
 
-- **Giriş Sayfası**
-- **Müşteri İşlemleri (CRUD)**
-- **Veteriner Doktor İşlemleri (CRUD)**
-- **Hayvan İşlemleri (CRUD)**
-- **Randevu İşlemleri (CRUD)**
-- **Aşı İşlemleri (CRUD)**
-- **Her sayfanın CRUD operasyonları**
-- **Kullanıcı bilgilendirme (Modal)**
-- **Tasarım (CSS, Material)**
+- **Login Page**
+- **Customer Operations (CRUD)**
+- **Veterinarian Operations (CRUD)**
+- **Animal Operations (CRUD)**
+- **Appointment Operations (CRUD)**
+- **Vaccination Operations (CRUD)**
+- **CRUD operations on each page**
+- **User information (Modal)**
+- **Design (CSS, Material)**
 
-## Başlangıç
+## Getting Started
 
-Projenizi yerel ortamda çalıştırmak için aşağıdaki adımları takip edebilirsiniz.
+To run your project locally, follow the steps below.
 
-### Gereksinimler
+### Requirements
 
 - Java 17+
 - Node.js 14+
-- PostgreSQL veya MySQL
+- PostgreSQL or MySQL
 - Spring Boot
 - React
 
-### Kurulum
+### Setup
 
 #### Backend
 
-1. Depoyu klonlayın:
+1. Clone the repository:
    ```sh
    git clone https://github.com/PehlivanMert/Veterinary-Api.git
-   cd veteriner-yonetim-sistemi/backend
+   cd Veterinary-Api
    ```
 
-2. Bağımlılıkları yükleyin ve uygulamayı çalıştırın:
+2. Install dependencies and run the application:
    ```sh
    ./mvnw clean install
    ./mvnw spring-boot:run
    ```
 
-3. Veritabanı yapılandırmasını `application.properties` dosyasında yapın.
+3. Configure the database in the `application.properties` file.
 
-4. Örnek veri eklemek için `.sql` dosyasını içe aktarın:
+4. Import the sample data using the `.sql` file:
    ```sh
-   psql -U kullanıcı_adı -d veritabani_adi -f src/main/resources/data.sql
+   psql -U username -d database_name -f src/main/resources/data.sql
    ```
-5. Alternatif olarak, docker-compose up --build komutu ile veritabanını ve uygulamayı ayağa kaldırabilirsiniz.
-6. Uygulama başarıyla çalıştığında, `http://localhost:8080` veya `http://localhost:8080/swagger-ui/index.html#/` adresine giderek API'yi test edebilirsiniz.
+5. Alternatively, you can start the database and application using the `docker-compose up --build` command.
+6. Once the application is running successfully, you can test the API at `http://localhost:8080` or `http://localhost:8080/swagger-ui/index.html#/`.
+
 #### Frontend
 
-1. Depoyu klonlayın:
+1. Clone the repository:
    ```sh
-   git clone https://github.com/kullanici_adi/veteriner-yonetim-sistemi.git
-   cd veteriner-yonetim-sistemi/frontend
+   git clone https://github.com/pehlivanmert/vetapp-frontend.git
+   cd vetapp-frontend
    ```
 
-2. Bağımlılıkları yükleyin:
+2. Install dependencies:
    ```sh
    npm install
    ```
 
-3. Uygulamayı çalıştırın:
+3. Run the application:
    ```sh
    npm start
    ```
-4. Uygulama başarıyla çalıştığında, `http://localhost:5173` adresine giderek uygulamayı kullanabilirsiniz.
 
+4. Once the application is running successfully, you can use it at `http://localhost:5173`.
 
-## Kullanım
+## Usage
 
-### Müşteri İşlemleri
+### Customer Operations
 
-1. **Müşteri Ekleme**: Müşteri bilgilerini girin ve kaydedin.
-2. **Müşteriye Ait Hayvan Ekleme**: Müşteri seçerek hayvan bilgilerini girin ve kaydedin.
-3. **Müşteri Güncelleme ve Silme**: Müşteri bilgilerini güncelleyebilir veya silebilirsiniz.
+1. **Add Customer**: Enter and save customer information.
+2. **Add Animal to Customer**: Select a customer, enter animal information, and save.
+3. **Update and Delete Customer**: Update or delete customer information.
 
-### Veteriner Doktor İşlemleri
+### Veterinarian Operations
 
-1. **Doktor Ekleme**: Doktor bilgilerini girin ve kaydedin.
-2. **Doktorun Müsait Günlerini Ekleme**: Doktorun müsait günlerini girin ve kaydedin.
-3. **Doktor Güncelleme ve Silme**: Doktor bilgilerini güncelleyebilir veya silebilirsiniz.
+1. **Add Doctor**: Enter and save doctor information.
+2. **Add Doctor's Available Days**: Enter and save the doctor's available days.
+3. **Update and Delete Doctor**: Update or delete doctor information.
 
-### Randevu İşlemleri
+### Appointment Operations
 
-1. **Randevu Oluşturma**: Hayvan ve doktor seçerek randevu oluşturun.
-2. **Randevu Güncelleme ve Silme**: Randevu bilgilerini güncelleyebilir veya silebilirsiniz.
+1. **Create Appointment**: Select animal and doctor, then create an appointment.
+2. **Update and Delete Appointment**: Update or delete appointment information.
 
-### Aşı ve Rapor İşlemleri
+### Vaccination and Report Operations
 
-1. **Rapor Oluşturma**: Randevuya ait rapor oluşturun.
-2. **Rapora Aşı Ekleme**: Rapora aşı bilgilerini ekleyin.
+1. **Create Report**: Create a report for an appointment.
+2. **Add Vaccine to Report**: Add vaccination information to the report.
 
-## UML Diyagramı
+## UML Diagram
 
-Projenin UML diyagramını [buradan](img/VeterinerUml.png) görüntüleyebilirsiniz.
+You can view the UML diagram of the project [here](img/VeterinaryUml.png).
 
-## Katkıda Bulunma
+## Contributing
 
-1. Bu depoyu (`fork`) edin.
-2. Yeni bir özellik (`feature`) dalı oluşturun: `git checkout -b feature/fooBar`
-3. Değişikliklerinizi kaydedin: `git commit
-4. Dalınıza (`branch`) itme yapın: `git push origin feature/fooBar`
-5. Bir birleştirme isteği (`pull request`) gönderin.
-6. İsteğiniz incelendikten sonra birleştirilir.
-7. Birleştirme işlemi sonrasında dalınızı silebilirsiniz: `git branch -d feature/fooBar`
-8. Projeye katkıda bulunduğunuz için teşekkür ederim!
+1. Fork this repository.
+2. Create a new feature branch: `git checkout -b feature/fooBar`
+3. Commit your changes: `git commit -am 'Add some fooBar'`
+4. Push to the branch: `git push origin feature/fooBar`
+5. Submit a pull request.
+6. Your pull request will be reviewed and merged.
+7. After merging, you can delete your branch: `git branch -d feature/fooBar`
+8. Thank you for contributing to the project!
 
-## İletişim
+## Contact
 
-Herhangi bir sorunuz veya geri bildiriminiz için lütfen benimle iletişime geçin:
+If you have any questions or feedback, please feel free to contact me:
 - **Email**: [pehlivanmert@outlook.com.tr](mailto:pehlivanmert@outlook.com.tr)
-- **GitHub**: [Mert Pehlivan Github](https://github.com/PehlivanMert)
-
+- **GitHub**: [Mert Pehlivan GitHub](https://github.com/PehlivanMert)
